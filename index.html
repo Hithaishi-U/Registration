@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #000000;
+            padding: 8px;
+             
+            text-align: left;
+        }
+        th {
+            background-color: burlywood;
+            text-align: center;
+        }
+        td{
+            background-color: bisque;
+        }
+        iframe {
+            width: 80%;
+            height: 200px;
+            border: 1px solid #000000;
+            margin: 20px auto;
+            display: block;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><center>REGISTRATION FORM</center></h1>
+
+    <form action="#" method="post">
+        <table>
+                <tr>
+                    <th colspan="2" align="center"><b>PERSONAL DETAILS</b></th>
+                </tr>
+                <tr>
+                    <td><label>First Name:</label></td>
+                    <td><input type="text" name="firstName" required></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name:</label></td>
+                    <td><input type="text" name="lastName" required></td>
+                </tr>
+                <tr>
+                    <td><label>Email:</label></td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone Number:</label></td>
+                    <td><input type="text" name="phone" pattern="[0-9]{10}" title="Phone number must be 10 digits" maxlength="10"></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2" align="center"><b>ACCOUNT DETAILS</b></th>
+                </tr>
+                <tr>
+                    <td><label>Username:</label></td>
+                    <td><input type="text" name="username" required pattern="[a-zA-Z0-9]{5,15}" title="Username must be 5-15 alphanumeric characters"></td>
+                </tr>
+                <tr>
+                    <td><label>Password:</label></td>
+                    <td><input type="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" title="Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long."></td>
+                </tr>
+                <tr>
+                    <td><label>Confirm Password:</label></td>
+                    <td><input type="password" name="confirmPassword" required></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2" align="center"><b>ADDRESS</b></th>
+                </tr>
+                <tr>
+                    <td><label>Address Line 1:</label></td>
+                    <td><input type="text" name="address1" required></td>
+                </tr>
+                <tr>
+                    <td><label>Address Line 2:</label></td>
+                    <td><input type="text" name="address2"></td>
+                </tr>
+                <tr>
+                    <td><label>City:</label></td>
+                    <td><input type="text" name="city" required></td>
+                </tr>
+                <tr>
+                    <td><label>State:</label></td>
+                    <td>
+                        <select name="state" required>
+                            <option value="">Select State</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Tamil Nadu</option>
+                            <option>Telangana</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="zipCode">ZIP Code:</label></td>
+                    <td><input type="text" id="zipCode" name="zipCode" required pattern="[0-9]{5}" title="ZIP Code must be 5 digits" maxlength="5"></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2" align="center"><b>PREFERENCES</b></th>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="newsletter">Subscribe to Newsletter</label></td>
+                    <td><input type="checkbox" id="newsletter" name="newsletter"></td>
+                </tr>
+                <tr>
+                    <td><label for="bio">Short Bio:</label></td>
+                    <td><textarea id="bio" name="bio" rows="4" cols="50" maxlength="200"></textarea></td>
+                </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Register</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <h2><center>Terms and Conditions</center></h2>
+    <iframe srcdoc="
+        <h3>Terms and Conditions</h3>
+        <p>Welcome to our Registration Service. By proceeding with this registration, you agree to the following terms and conditions:</p>
+        <ol>
+            <li>All information provided must be accurate and true.</li>
+            <li>You are responsible for maintaining the confidentiality of your account details.</li>
+            <li>We reserve the right to modify or terminate services at any time.</li>
+            <li>Your data will be handled in accordance with our privacy policy.</li>
+            <li>Any misuse of the service may result in account termination.</li>
+        </ol>
+        <p>Please read these terms and conditions carefully before agreeing.</p>
+    "></iframe>
+
+</body>
+</html>
